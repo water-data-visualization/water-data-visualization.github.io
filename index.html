@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.23/paper-full.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row navigation">
+        <div class="col-xs-12">
+          <nav>
+            <a class="nav1">Ressource Wasser</a>
+            <a class="nav2">Wasserverbrauch</a>
+            <a class="nav3">Abwasserbehandlung</a>
+          </nav>
+        </div>
+      </div>
+      <div class="row hero">
+        <img class="hero__img" src="images/hero.svg">
+        <p><strong>Ressourcen, Verbrauch und Entsorgung in Europa 2015.</strong></p>
+        <p>Semesterarbeit im Kurs Webdesign des Studiengangs Onlinemedien</p>
+        <img class="hero__logo" src="images/logo_dhbw.svg">
+        <a class="button button__data">Zeig mir die Daten!</a>
+        <canvas id="canvas" width="500" height="100"></canvas>
+      </div>
+      <div class="row section1">
+        <div class="col-xs-10 col-xs-offset-1">
+          <img src="images/icons/fish.svg">
+          <h2>DIE RESSOURCE WASSER</h2>
+          <span class="separator__wave"><img src="images/icons/wave.svg"></span>
+          <p>Einige EU-Mitgliedsstaaten beziehen einen Großteil ihrer Süßwasserressourcen aus externen Zuflüssen. In absoluten Zahlen (d. h. als Volumen des empfangenen Wassers) haben Ungarn, Bulgarien und Kroatien die höchsten externen Zuflüsse unter den EU-Mitgliedsstaaten, wobei allerdings Serbien ein noch größeres Volumen verzeichnet. Süßwasserressourcen pro Einwohner sind ein wichtiger Indikator für die Messung der Nachhaltigkeit der Wasserressourcen. Unter den EU-Mitgliedsstaaten verzeichnet Kroatien die größten Süßwasserressourcen.</p>
+          <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+              <img class="img__pool" src="images/icons/pool.svg">
+              <div class="pool__subtext">
+                <p>Die Wassermenge in einem Olympia Schwimmbecken beträgt</p>
+                <p><strong>2500M³</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row section2">
+        <div class="col-xs-5 col-xs-offset-2 offsetOverride">
+          <div id="country">
+            <img src="images/flags/Flag_of_Germany.svg" />
+            <select class="button button__select"></select>
+            <h3 class="h3__first">Insgesamt <strong><span>192.0</span> Mrd m³</strong></h3>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div id="pieChart"></div>
+            </div>
+            <div class="col-xs-6">
+              <div class="infoBox">
+                <h4>Interner Fluss</h4>
+                <p>Als interner Zufluss wird die Niederschlagsmenge abzüglich der Verdunstung von Boden- und Wasseroberflächen in einem Gebiet bezeichnet.</p>
+                <h4>Externer Zufluss</h4>
+                <p>Der externe Zufluss ist die Menge an Wasser, die aus angrenzenden Gebieten in Flüsse und in das Grundwasser einfließt.</p>
+              </div>
+            </div>
+          </div>
+          <h3 class="pool__info">Pro Einwohner <strong><span>1</span> Schwimmbecken</strong></h3>
+          <div class="pool__sprite"></div>
+        </div>
+        <div class="col-xs-4">
+          <div class="buttons">
+            <a class="button button__min">MIN</a>
+            <a class="button button__max">MAX</a>
+          </div>
+          <div id="map"></div>
+        </div>
+      </div>
+      <div class="row fact">
+        <div class="row fact__heading">
+          <div class="col-xs-12">
+            <h3><img src="images/icons/jellyfish.svg">Schon gewusst?</h3>
+            <span class="separator__wave"><img src="images/icons/wave_small.svg"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <p class="fact__text">Das Vereinigte Königreich, Schweden, Frankreich und Deutschland haben die größten Süßwasserressourcen.</p>
+          </div>
+          <div class="col-xs-8">
+            <p class="fact__text">Zu einer Wasserstresssituation kommt es, wenn die jährlichen Wasserressourcen unter 1.700 m³ pro Einwohner sinken. Dies traf auf Polen, die Tschechische Republik, Zypern und Malta zu.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row section3">
+        <div class="col-xs-10 col-xs-offset-1">
+          <img src="images/icons/raincloud.svg">
+          <h2>WASSERVERBRAUCH</h2>
+          <span class="separator__wave"><img src="images/icons/wave.svg"></span>
+          <p>In fast allen EU-Mitgliedsstaaten, für die Daten vorliegen, verbrauchen private Haushalte mehr Wasser aus der öffentlichen Wasserversorgung als Unternehmen. Belgien (Daten von 2011) ist mit einem größeren Wasserverbrauch aus der öffentlichen Wasserversorgung durch Unternehmen die einzige Ausnahme von dieser Regel.</p>
+        </div>
+      </div>
+      <div class="row section4">
+        <h3>Wassernutzung pro Einwohner aus öffentlicher Wasserversorgung</h3>
+        <div class="row">
+          <div id="barChart"></div>
+        </div>
+        <div class="economicUsage">
+          <div class="economicUsageHeading">
+            <div id="usageCountry">
+              <img src="images/flags/Flag_of_Germany.svg">
+              <h2>Deutschland</h2>
+            </div>
+            <h3>Wassernutzung nach Wirtschaftssektor</h3>
+          </div>
+          <div class="row economicUsageContainer">
+            <div class="col-xs-5">
+              <div id="extendablePieChart">
+                <div class="hoverDisabler">
+
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-7 gaugesFlexContainer">
+              <div id="gaugesContainer">
+                <div id="liquidFillGauges">
+                  <svg id="agriGauge" width="150" height="175"></svg>
+                  <svg id="manuGauge" width="150" height="175"></svg>
+                  <svg id="prodGauge" width="150" height="175"></svg>
+                  <svg id="servicesGauge" width="150" height="175"></svg>
+                </div>
+                <div id="householdsGauge"><p id="householdsGaugeText"></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row fact fact2">
+        <div class="row fact__heading">
+          <div class="col-xs-12">
+            <h3><img src="images/icons/octopus.svg">Schon gewusst?</h3>
+            <span class="separator__wave"><img src="images/icons/wave_small.svg"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <p class="fact__text">In den meisten Ländern Europas kann die allgemeine Nutzung der Wasserressourcen langfristig als nachhaltig betrachtet werden.</p>
+          </div>
+          <div class="col-xs-4">
+            <p class="fact__text">In fast allen Ländern verbrauchten private Haushalte mehr Wasser aus der öffentlichen Wasserversorgung als Unternehmen.</p>
+          </div>
+          <div class="col-xs-4">
+            <p class="fact__text">Die Wassernutzung durch private Haushalte ist in den meisten Ländern rückgängig.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row section5">
+        <div class="col-xs-10 col-xs-offset-1">
+          <img src="images/icons/umbrella.svg">
+          <h2>ABWASSERBEHANDLUNG</h2>
+          <span class="separator__wave"><img src="images/icons/wave.svg"></span>
+          <p>In der Regel wird ein Großteil des Gesamtvolumens des behandelten Klärschlamms einer der folgenden vier Entsorgungsarten zugeführt: Landwirtschaftliche Nutzung, Kompostierung, Verbrennung oder Deponierung. Über drei Viertel der Gesamtmenge wird in fünf Mitgliedsstaaten als Dünger in der Landwirtschaft eingesetzt.</p>
+        </div>
+      </div>
+      <div class="row section6">
+        <div class="col">
+          <div class="col-xs-8">
+            <h3>Entsorgung von Klärschlamm nach Behandlungsarten</h3>
+            <div class="countryInfo">
+              <img src="images/flags/Flag_of_Germany.svg">
+              <h2>Deutschland</h2>
+            </div>
+            <div id="treemap"></div>
+            <div class="legend">
+              <span class="l1">Verbrennung</span>
+              <span class="l2">Landwirtschaft</span>
+              <span class="l3">Kompostierung</span>
+              <span class="l4">Deponierung</span>
+              <span class="l5">Andere</span>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="countrySearch">
+              <div class="form-group has-feedback">
+                <input class="countrySearch__input form-control" type="text" name="" value="">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+              </div>
+              <div class="countrySearch__result"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row fact">
+        <div class="row fact__heading">
+          <div class="col-xs-12">
+            <h3><img src="images/icons/crab.svg">Schon gewusst?</h3>
+            <span class="separator__wave"><img src="images/icons/wave_small.svg"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <p class="fact__text">Insgesamt wird ein immer größerer Anteil der Bevölkerung an kommunale Abwasseraufbereitungsanlagen angeschlossen.</p>
+          </div>
+          <div class="col-xs-4">
+            <p class="fact__text">Malta hat im Jahr 2011 eine Abdeckung von 100% erreicht. Im Jahr zuvor waren es noch 21%.</p>
+          </div>
+          <div class="col-xs-4">
+            <p class="fact__text">Durch Verbrennung und die Entsorgung auf Deponien kann die Verbreitung von Schadstoffen auf Ackerbauflächen verringert oder vermieden werden.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <p><b>Wasser - Ressourcen, Verbrauch und Entsorgung in Europa</b></p>
+            <p>Semesterarbeit im Kurs Webdesign 3 - Multimediales Informationsdesign</p>
+            <p>Dozent: Dipl.-Des. Lothar B. Blum</p>
+            <p>Simon Bort | Thomas Göhringer | Raphael Guttenberger | Ann-Kathrin Vögele</p>
+            <p>DHBW Campus Mosbach, Fachbereich Online Medien | 27. Januar 2017</p>
+            <span class="separator__wave"><img src="images/icons/wave_small.svg"></span>
+            <p>Die Daten sind vom 15.10.2016 und entstammen der Studie <strong>Wasserstatistik</strong> von <strong>Eurostat</strong>. Die aktuellsten Daten sind unter <a href="http://ec.europa.eu/eurostat/statistics-explained/index.php/Water_statistics/de" target="_blank">ec.europa.eu</a> erreichbar. Eine Aktualisierung des Artikels ist für Dezember 2017 geplant.</p>
+          </div>
+        </div>
+        <img class="bubble bubble1" src="images/icons/bubbles1.svg">
+        <img class="bubble bubble3" src="images/icons/bubbles3.svg">
+        <img class="bubble bubble2" src="images/icons/bubbles2.svg">
+        <img class="bubble bubble4" src="images/icons/bubbles4.svg">
+      </div>
+    </footer>
+    <script type="text/javascript" src="script.bundle.js"></script>
+  </body>
+</html>
