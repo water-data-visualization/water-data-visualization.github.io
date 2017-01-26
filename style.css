@@ -35,25 +35,25 @@
 
 .treemap__agri {
   background-color: #A9E0F0 !important;
-  background: url("images/icons/agri.svg") no-repeat top left;
+  background: url("/images/icons/agri.svg") no-repeat top left;
   background-size: auto 60%;
   background-origin: content-box; }
 
 .treemap__compost {
   background-color: #FFA48F !important;
-  background: url("images/icons/compost.svg") no-repeat top left;
+  background: url("/images/icons/compost.svg") no-repeat top left;
   background-size: auto 60%;
   background-origin: content-box; }
 
 .treemap__landfill {
   background-color: #F1D38D !important;
-  background: url("images/icons/landfill.svg") no-repeat top left;
+  background: url("/images/icons/landfill.svg") no-repeat top left;
   background-size: auto 60%;
   background-origin: content-box; }
 
 .treemap__incineration {
   background-color: #c5b3d1 !important;
-  background: url("images/icons/incineration.svg") no-repeat top left;
+  background: url("/images/icons/incineration.svg") no-repeat top left;
   background-size: auto 60%;
   background-origin: content-box; }
 
@@ -211,7 +211,7 @@ h4 {
     margin-left: 10px;
     width: 106px;
     height: 70px;
-    background: url("images/pool_sprite.png") 0 0;
+    background: url("/images/pool_sprite.png") 0 0;
     transition: width 2s; }
   .section2 .infoBox {
     font-size: 14px;
@@ -228,8 +228,9 @@ h4 {
         content: '\25A0';
         font-size: 30px;
         position: relative;
-        top: 2px;
-        padding-right: 5px;
+        top: -3px;
+        left: -1px;
+        padding-right: 4px;
         color: #0065a8; }
 
 .section6 {

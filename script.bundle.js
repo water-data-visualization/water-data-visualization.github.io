@@ -122,10 +122,10 @@
 	function updatePoolSprite() {
 	  if (country.info.name === 'Island') {
 	    $('.pool__sprite').not(':first').remove();
-	    POOL_SPRITE.style = '\n      background: url(\'images/pool_sprite_211.png\') no-repeat;\n      width: 0px;\n      height: 0px;\n      background-size: auto 80%;\n    ';
+	    POOL_SPRITE.style = '\n      background: url(\'/images/pool_sprite_211.png\') no-repeat;\n      width: 0px;\n      height: 0px;\n      background-size: auto 80%;\n    ';
 	    console.log('asd');
 	    setTimeout(function () {
-	      POOL_SPRITE.style = '\n        background: url(\'images/pool_sprite_211.png\') no-repeat;\n        width: 800px;\n        height: 400px;\n        background-size: auto 80%;\n      ';
+	      POOL_SPRITE.style = '\n        background: url(\'/images/pool_sprite_211.png\') no-repeat;\n        width: 800px;\n        height: 400px;\n        background-size: auto 80%;\n      ';
 	    }, 100);
 	    return;
 	  }
@@ -720,8 +720,8 @@
 			"nameAbrev": "CZ",
 			"flag": "images/flags/Flag_of_the_Czech_Republic.svg",
 			"flow": [
-				15.3,
-				30.2
+				15.2,
+				0.7
 			],
 			"flowTotal": 16,
 			"resources": 1.5,
@@ -1969,7 +1969,7 @@
 	var tooltipNace = tooltip.append('text').attr('x', 5).attr('dy', '3.6em').style('text-anchor', 'start').attr('font-size', '12px').attr('font-weight', 'bold');
 
 	// Click indicator
-	var clickIndicator = svg.append('svg:image').attr('xlink:href', 'images/icons/clickindicator.svg').attr('width', '200').attr('height', '50').attr('x', 500).attr('y', 30);
+	var clickIndicator = svg.append('svg:image').attr('xlink:href', '/images/icons/clickindicator.svg').attr('width', '200').attr('height', '50').attr('x', 500).attr('y', 30);
 
 	// Legend
 	var legend = svg.append('g').attr('class', 'barChartLegend').attr('transform', 'translate(1000,10)');
@@ -2126,10 +2126,10 @@
 	  d3.select(this).transition().duration(500).ease('bounce').attr('d', d3.svg.arc().innerRadius(radius - 20).outerRadius(radius));
 
 	  if ($(this).data('sector') === 'nace') {
-	    donutImage.attr('xlink:href', 'images/icons/industry.svg');
+	    donutImage.attr('xlink:href', '/images/icons/industry.svg');
 	    donutText.text('Unternehmen');
 	  } else {
-	    donutImage.attr('xlink:href', 'images/icons/households.svg');
+	    donutImage.attr('xlink:href', '/images/icons/households.svg');
 	    donutText.text('Haushalte');
 	  }
 	}).on('mouseout', function (d) {
@@ -2140,18 +2140,18 @@
 
 	  if (thisPath.classed('clicked')) {
 	    if ($(this).data('sector') === 'nace') {
-	      donutImage.attr('xlink:href', 'images/icons/industry.svg');
+	      donutImage.attr('xlink:href', '/images/icons/industry.svg');
 	      donutText.text('Unternehmen');
 	    } else {
-	      donutImage.attr('xlink:href', 'images/icons/households.svg');
+	      donutImage.attr('xlink:href', '/images/icons/households.svg');
 	      donutText.text('Haushalte');
 	    }
 	  } else {
 	    if ($(this).data('sector') === 'nace') {
-	      donutImage.attr('xlink:href', 'images/icons/households.svg');
+	      donutImage.attr('xlink:href', '/images/icons/households.svg');
 	      donutText.text('Haushalte');
 	    } else {
-	      donutImage.attr('xlink:href', 'images/icons/industry.svg');
+	      donutImage.attr('xlink:href', '/images/icons/industry.svg');
 	      donutText.text('Unternehmen');
 	    }
 	  }
@@ -2180,7 +2180,7 @@
 	  selSector = thisPath.attr('data-sector');
 	});
 
-	var donutImage = svg.append('svg:image').attr('xlink:href', 'images/icons/industry.svg').attr('x', -40).attr('y', -55).attr('width', '80').attr('height', '80');
+	var donutImage = svg.append('svg:image').attr('xlink:href', '/images/icons/industry.svg').attr('x', -40).attr('y', -55).attr('width', '80').attr('height', '80');
 
 	var donutText = svg.append('text').text('Unternehmen').attr('y', 50).attr('fill', '#0065a8').attr('text-anchor', 'middle');
 
@@ -2209,7 +2209,7 @@
 	      donutText.text('Unternehmen');
 	    } else {
 	      donutText.text('Haushalte');
-	      donutImage.attr('xlink:href', 'images/icons/households.svg');
+	      donutImage.attr('xlink:href', '/images/icons/households.svg');
 	      $('#householdsGaugeText').show();
 	    }
 	    donutText.attr('y', 50).style('opacity', 1);
@@ -14277,7 +14277,7 @@
 
 	var text = d3.selectAll('g.slice').append('text').data(pie([437, 893])).text(function (d) {
 	  return d.value;
-	}).attr('font-size', '20px').attr('fill', 'white').attr('text-anchor', 'middle').attr('transform', function (d) {
+	}).attr('font-size', '24px').attr('fill', 'white').attr('text-anchor', 'middle').attr('transform', function (d) {
 	  d.innerRadius = 0;
 	  d.outerRadius = radius;
 	  return 'translate(' + arc.centroid(d) + ')';
