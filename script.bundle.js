@@ -93,10 +93,9 @@
 	      return (Math.round(pools * 100) / 100).toFixed(0);
 	    },
 	    flowTotal: function flowTotal() {
-	      var total = this.info.flow.reduce(function (a, b) {
-	        return a + b;
-	      }, 0);
-	      return (Math.round(total * 100) / 100).toFixed(1);
+	      // const total = this.info.flow.reduce((a, b) => a + b, 0);
+	      // return (Math.round(total * 100) / 100).toFixed(1);
+	      return (Math.round(this.info.flowTotal * 100) / 100).toFixed(1);
 	    },
 	    namePrefix: function namePrefix() {
 	      if (this.info.name === 'Europäische Union') {
@@ -648,6 +647,7 @@
 				12.3,
 				7.6
 			],
+			"flowTotal": 19.9,
 			"resources": 1.8,
 			"usage": {
 				"public": {
@@ -685,6 +685,7 @@
 				17.6,
 				89.1
 			],
+			"flowTotal": 106.7,
 			"resources": 14.6,
 			"usage": {
 				"public": {
@@ -722,6 +723,7 @@
 				15.3,
 				30.2
 			],
+			"flowTotal": 16,
 			"resources": 1.5,
 			"usage": {
 				"public": {
@@ -759,6 +761,7 @@
 				16.3,
 				0
 			],
+			"flowTotal": 16.3,
 			"resources": 2.9,
 			"usage": {
 				"public": {
@@ -784,6 +787,7 @@
 				117,
 				75
 			],
+			"flowTotal": 188,
 			"resources": 2.3,
 			"usage": {
 				"public": {
@@ -809,6 +813,7 @@
 				12.3,
 				null
 			],
+			"flowTotal": 12.3,
 			"resources": 9.4,
 			"usage": {
 				"public": {
@@ -846,6 +851,7 @@
 				47.5,
 				3.5
 			],
+			"flowTotal": 51,
 			"resources": 11.1,
 			"usage": {
 				"public": {
@@ -871,6 +877,7 @@
 				60,
 				12
 			],
+			"flowTotal": 72,
 			"resources": 6.5,
 			"usage": {
 				"public": {
@@ -908,6 +915,7 @@
 				111.1,
 				0
 			],
+			"flowTotal": 111.1,
 			"resources": 2.4,
 			"usage": {
 				"public": {
@@ -945,6 +953,7 @@
 				180,
 				11
 			],
+			"flowTotal": 186.3,
 			"resources": 2.8,
 			"usage": {
 				"public": {
@@ -982,6 +991,7 @@
 				26.1,
 				85.6
 			],
+			"flowTotal": 111.7,
 			"resources": 26.2,
 			"usage": {
 				"public": {
@@ -1012,6 +1022,7 @@
 				85.3,
 				30.5
 			],
+			"flowTotal": 115.8,
 			"resources": 1.9,
 			"usage": {
 				"public": {
@@ -1037,6 +1048,7 @@
 				0.3,
 				0
 			],
+			"flowTotal": 0.3,
 			"resources": 0.4,
 			"usage": {
 				"public": {
@@ -1074,6 +1086,7 @@
 				16.9,
 				16.8
 			],
+			"flowTotal": 33.7,
 			"resources": 16.7,
 			"usage": {
 				"public": {
@@ -1099,6 +1112,7 @@
 				15.5,
 				9
 			],
+			"flowTotal": 24.5,
 			"resources": 8.2,
 			"usage": {
 				"public": {
@@ -1136,6 +1150,7 @@
 				0.9,
 				0.7
 			],
+			"flowTotal": 1.6,
 			"resources": 3.1,
 			"usage": {
 				"public": null,
@@ -1158,6 +1173,7 @@
 				7.5,
 				108.9
 			],
+			"flowTotal": 116.4,
 			"resources": 11.8,
 			"usage": {
 				"public": {
@@ -1195,6 +1211,7 @@
 				0.1,
 				0
 			],
+			"flowTotal": 0.1,
 			"resources": 0.2,
 			"usage": {
 				"public": {
@@ -1232,6 +1249,7 @@
 				10.3,
 				81.5
 			],
+			"flowTotal": 91.8,
 			"resources": 5.5,
 			"usage": {
 				"public": {
@@ -1269,6 +1287,7 @@
 				55,
 				29
 			],
+			"flowTotal": 84,
 			"resources": 9.9,
 			"usage": {
 				"public": {
@@ -1306,6 +1325,7 @@
 				54.8,
 				8.3
 			],
+			"flowTotal": 63.1,
 			"resources": 1.7,
 			"usage": {
 				"public": {
@@ -1343,6 +1363,7 @@
 				38.6,
 				35
 			],
+			"flowTotal": 73.6,
 			"resources": 7,
 			"usage": {
 				"public": {
@@ -1380,6 +1401,7 @@
 				39.4,
 				2.9
 			],
+			"flowTotal": 42.3,
 			"resources": 2.1,
 			"usage": {
 				"public": {
@@ -1417,6 +1439,7 @@
 				18.6,
 				13.5
 			],
+			"flowTotal": 32.1,
 			"resources": 15.6,
 			"usage": {
 				"public": {
@@ -1454,6 +1477,7 @@
 				13.1,
 				67.3
 			],
+			"flowTotal": 80.3,
 			"resources": 14.8,
 			"usage": {
 				"public": {
@@ -1479,6 +1503,7 @@
 				107,
 				3.2
 			],
+			"flowTotal": 110,
 			"resources": 20.3,
 			"usage": {
 				"public": null,
@@ -1501,6 +1526,7 @@
 				172.6,
 				13.6
 			],
+			"flowTotal": 186.2,
 			"resources": 19.5,
 			"usage": {
 				"public": {
@@ -1526,6 +1552,7 @@
 				161.4,
 				6.5
 			],
+			"flowTotal": 172.9,
 			"resources": 2.7,
 			"usage": {
 				"public": {
@@ -1563,6 +1590,7 @@
 				170,
 				0
 			],
+			"flowTotal": 170,
 			"resources": 528.2,
 			"usage": {
 				"public": {
@@ -1581,6 +1609,7 @@
 				380.7,
 				12.3
 			],
+			"flowTotal": 393,
 			"resources": 77.8,
 			"usage": {
 				"public": {
@@ -1618,6 +1647,7 @@
 				39.8,
 				12.6
 			],
+			"flowTotal": 52.4,
 			"resources": 6.5,
 			"usage": {
 				"public": {
@@ -1655,6 +1685,7 @@
 				null,
 				1
 			],
+			"flowTotal": 1,
 			"resources": null,
 			"usage": {
 				"public": {
@@ -1685,6 +1716,7 @@
 				12.8,
 				162.6
 			],
+			"flowTotal": 175.4,
 			"resources": 24.4,
 			"usage": {
 				"public": {
@@ -1715,6 +1747,7 @@
 				227.4,
 				6.9
 			],
+			"flowTotal": 234.3,
 			"resources": 3.1,
 			"usage": {
 				"public": {
@@ -1745,6 +1778,7 @@
 				null,
 				null
 			],
+			"flowTotal": null,
 			"resources": null,
 			"usage": {
 				"public": {
@@ -1782,6 +1816,7 @@
 				null,
 				null
 			],
+			"flowTotal": null,
 			"resources": null,
 			"usage": {
 				"public": {
@@ -1812,6 +1847,7 @@
 				null,
 				null
 			],
+			"flowTotal": null,
 			"resources": null,
 			"usage": {
 				"public": {
@@ -1933,7 +1969,7 @@
 	var tooltipNace = tooltip.append('text').attr('x', 5).attr('dy', '3.6em').style('text-anchor', 'start').attr('font-size', '12px').attr('font-weight', 'bold');
 
 	// Click indicator
-	var clickIndicator = svg.append('svg:image').attr('xlink:href', '/images/icons/clickindicator.svg').attr('width', '200').attr('height', '50').attr('x', 500).attr('y', 30);
+	var clickIndicator = svg.append('svg:image').attr('xlink:href', 'images/icons/clickindicator.svg').attr('width', '200').attr('height', '50').attr('x', 500).attr('y', 30);
 
 	// Legend
 	var legend = svg.append('g').attr('class', 'barChartLegend').attr('transform', 'translate(1000,10)');
