@@ -1933,7 +1933,7 @@
 	var tooltipNace = tooltip.append('text').attr('x', 5).attr('dy', '3.6em').style('text-anchor', 'start').attr('font-size', '12px').attr('font-weight', 'bold');
 
 	// Click indicator
-	var clickIndicator = svg.append('svg:image').attr('xlink:href', 'images/icons/clickindicator.svg').attr('width', '200').attr('x', 500).attr('y', 30);
+	var clickIndicator = svg.append('svg:image').attr('xlink:href', '/images/icons/clickindicator.svg').attr('width', '200').attr('x', 500).attr('y', 30);
 
 	// Legend
 	var legend = svg.append('g').attr('class', 'barChartLegend').attr('transform', 'translate(1000,10)');
